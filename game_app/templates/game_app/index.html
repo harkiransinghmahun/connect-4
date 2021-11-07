@@ -1,0 +1,17 @@
+{% extends 'game_app/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+
+<div class="jumbotron">
+    <h1 class="display-4 text-center">Welcome to Connect Four</h1>
+    <form class="register_form" action="{% url 'game_app:create' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary" name="" value="Click here to register">
+  </form>
+
+  <!-- <a class="board" href="{% url 'game_app:scores' %}"><button class="btn btn-primary"  type="button" >Leaders Board</button></a> -->
+
+</div>
+
+{% endblock %}

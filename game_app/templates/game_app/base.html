@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'game_app/connect_four.css' %}" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
+        <div class="container">
+          <ul class="nav navbar-nav">
+            <li class="navbar-brand" ><img src="https://www.logolynx.com/images/logolynx/04/04e3f399f686e98a363c7cb5036ed0ae.png" width="125" height="45" alt="" /></li>
+            <li class="item px-2 pt-2" ><a class="link" href="{% url 'index' %}">Home</a></li>
+            <li class="item px-2 pt-2" ><a class="link" href="{% url 'game_app:scores' %}">Leaders Board</a></li>
+            <li class="item px-2 pt-2" ><a class="link" href="{% url 'admin:index' %}">Admin</a></li>
+          </ul>
+        </div>
+      </nav>
+          {% block body_block %}
+
+          {% endblock %}
+
+    </div>
+  </body>
+</html>

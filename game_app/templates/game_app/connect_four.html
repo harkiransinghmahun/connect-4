@@ -1,0 +1,78 @@
+{% extends 'game_app/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+
+        <div class="jumbotron">
+          <h1 class="display-4 text-center">Welcome to Connect Four</h1>
+          <p id="lead" class="lead text-center">The objective of this game is to connect four of your chips!</p>
+          <p id="playerone" class="lead text-center">{{player1}}</p>
+          <p id="playertwo" class="lead text-center">{{player2}}</p>
+          <form class="restart" method="post">
+            {% csrf_token %}
+             <!-- <label for="playername">Name: </label><input id="label1" type="text" name="playername" value="">
+             <label for="moves">Moves:</label><input id="label2" type="text" name="moves" value=""> -->
+             {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="Press to Restart the game!">
+          </form>
+        </div>
+
+      <table class="gameboard" align="center">
+        <tr>
+          <td class="row1 column1 circle col1"></td>
+          <td class="row1 column2 circle col2"></td>
+          <td class="row1 column3 circle col3"></td>
+          <td class="row1 column4 circle col4"></td>
+          <td class="row1 column5 circle col5"></td>
+          <td class="row1 column6 circle col6"></td>
+          <td class="row1 column7 circle col7"></td>
+        </tr>
+        <tr>
+          <td class="row2 column1 circle col1"></td>
+          <td class="row2 column2 circle col2"></td>
+          <td class="row2 column3 circle col3"></td>
+          <td class="row2 column4 circle col4"></td>
+          <td class="row2 column5 circle col5"></td>
+          <td class="row2 column6 circle col6"></td>
+          <td class="row2 column7 circle col7"></td>
+        </tr>
+        <tr>
+          <td class="row3 column1 circle col1"></td>
+          <td class="row3 column2 circle col2"></td>
+          <td class="row3 column3 circle col3"></td>
+          <td class="row3 column4 circle col4"></td>
+          <td class="row3 column5 circle col5"></td>
+          <td class="row3 column6 circle col6"></td>
+          <td class="row3 column7 circle col7"></td>
+        </tr>
+        <tr>
+          <td class="row4 column1 circle col1"></td>
+          <td class="row4 column2 circle col2"></td>
+          <td class="row4 column3 circle col3"></td>
+          <td class="row4 column4 circle col4"></td>
+          <td class="row4 column5 circle col5"></td>
+          <td class="row4 column6 circle col6"></td>
+          <td class="row4 column7 circle col7"></td>
+        </tr>
+        <tr>
+          <td class="row5 column1 circle col1"></td>
+          <td class="row5 column2 circle col2"></td>
+          <td class="row5 column3 circle col3"></td>
+          <td class="row5 column4 circle col4"></td>
+          <td class="row5 column5 circle col5"></td>
+          <td class="row5 column6 circle col6"></td>
+          <td class="row5 column7 circle col7"></td>
+        </tr>
+        <tr>
+          <td class="row6 column1 circle col1"></td>
+          <td class="row6 column2 circle col2"></td>
+          <td class="row6 column3 circle col3"></td>
+          <td class="row6 column4 circle col4"></td>
+          <td class="row6 column5 circle col5"></td>
+          <td class="row6 column6 circle col6"></td>
+          <td class="row6 column7 circle col7"></td>
+        </tr>
+
+      </table>
+  <script src="/static/game_app/connect_four.js"></script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'game_app/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Welcome to Leaders Board!</h1>
+
+  <table class="leadertable" align="center">
+    <thead>
+      <td class="cell">Player Name</td>
+      <td class="cell">No. of moves</td>
+    </thead>
+    {% for score in scores %}
+    <tr class="leaderrow">
+      <td class="cell">{{score.player_name}}</td>
+      <td class="cell">{{score.moves}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

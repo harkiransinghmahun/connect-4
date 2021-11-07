@@ -1,0 +1,17 @@
+{% extends 'game_app/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+
+<div class="jumbotron">
+  <h1 class="display-4 text-center">Welcome to Connect Four</h1>
+  <p id="lead" class="lead text-center">Please register first to play the game!</p>
+
+  <form class="register_form" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary" name="" value="Register">
+  </form>
+</div>
+
+{% endblock %}
