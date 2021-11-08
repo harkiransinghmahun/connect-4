@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from django.url import reverse
 
 # Create your models here.
 class Game(models.Model):
